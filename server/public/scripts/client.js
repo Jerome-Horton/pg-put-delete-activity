@@ -6,12 +6,8 @@ $(document).ready(function(){
 
 function addClickHandlers() {
   $('#submitBtn').on('click', handleSubmit);
-  $('#bookShelf').on('click', '.deleteBtn', deleteBooks);
-  $('#bookShelf').on('click', '.isReadBtn', booksRead);
-
-  // Add  buttons and functions in here
-
-  // TODO - Add code for edit & delete buttons
+  $('#bookShelf').on('click', '.deleteBtn', deleteBooks); // Created click listeners for deleteBtn.
+  $('#bookShelf').on('click', '.isReadBtn', booksRead);   // Created click listeners for isReadbtn.
 }
 
 function handleSubmit() {
@@ -64,11 +60,11 @@ function renderBooks(books) {
         <td>${book.author}</td>
         <td>${book.isRead}</td>
         <td><button class="deleteBtn" data-id="${book.id}">Delete</button></td>
-        <td><button class="isReadBtn" data-id="${book.id}" data-read="${book.isRead}">Mark As Read</button></td>
-        
+        <td><button class="isReadBtn" data-id="${book.id}" data-read="${book.isRead}">Mark As Read</button></td> 
       </tr>
     `);
     // Line 67, need to pass button data for req.body of the "PUT"
+    // Line 66, need to pass button data for req.body of the "DELETE"
   }
 }
 
